@@ -1,0 +1,203 @@
+body{
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
+
+
+/* nav bar design */
+nav{
+    min-height: 100vh;
+}
+.side-navbar{
+    position: fixed;
+    display: block;
+}
+
+.nav-links{
+    /* background-color: red; */
+    padding-left: 0;
+}
+
+.nav-links .nav-link{    
+    transition: all .5s;
+}
+
+.nav-links .nav-link:hover{
+    background-color: rgba(84, 218, 44, 0.075);    
+}
+
+.nav-links .nav-link a{
+    font-size: 20px;
+    color: black;
+}
+
+.nav-icon{
+    padding-right:20px ;
+}
+
+
+
+.user_image_nav{
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%; 
+	padding: 4px;
+}
+
+
+/* BODY STYLE */
+.body-nav{
+    background-color: rgb(241, 241, 241);
+    padding: 10px;
+    font-weight: bold;
+}
+
+.content-owner-image{
+    height: 70px;
+    width: 70px;
+    border-radius:50% ;
+    object-fit: cover;
+}
+
+
+.content-header-info{
+    /* border: 1px solid rgb(216, 215, 215); */
+    border-radius: 10px;
+}
+
+.content-box{
+    padding: 10px;
+    border: 1px solid rgba(169, 211, 160, 0.829);
+    margin: 20px 10px;
+    border-radius: 10px;    
+}
+
+.content-box a:hover{
+	text-decoration: none;
+}
+
+.content-interaction{
+    border: 1px solid rgb(201, 199, 199);
+    padding: 10px;   
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.content-interaction button,
+.content-interaction a{
+    border: none;
+    background-color:transparent;   
+    color: black; 
+    padding: 10px 20px;    
+}
+
+.content-interaction button:hover,
+.content-interaction a:hover{
+    background-color: rgb(176, 193, 209);
+    text-decoration-line: none;
+    border-radius: 10px;
+}
+
+
+.write-post-btn{
+	margin: 10px;
+	border:1px solid #d9caca;
+	padding: 10px;
+	background: #e8f4fd;
+	border-radius: 10px;
+	backdrop-filter: blur(10px); 
+}
+
+.write-post-btn img{
+	height: 40px;
+	width: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.write-post-btn span{
+	padding: 10px 40px;
+	margin-left:20px;
+	background: transparent;
+	border-radius: 20px;
+	transition: all 0.5s;
+	font-weight: bold;
+}
+
+.write-post-btn span:hover{
+	background: #e1e2f1;
+}
+
+
+
+
+/* PROFILE PAGE DESIGN */
+.profile-container img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.profile-container{
+    padding: 0 10px;
+    margin: 20px 0;
+    width: 99%;
+    border-radius: 10px;
+}
+
+.user-blogs-container .content-box{
+    margin: auto 0;
+}
+
+.user-blogs-container .content-interaction button {
+    padding: 5px;
+}
+.user-blogs-container .content-interaction a {
+    padding: 5px;
+    line-height: 10px;
+}
+
+
+
+/* search bar */
+.search_box ul{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	padding:0;
+	width: 100%;	
+}
+.search_box {
+	position: relative;
+}
+
+
+.search_box li{
+	list-style-type: none;
+	background-color: #514e4e;
+	width: 100%;
+	padding: 5px;
+	z-index: 200;
+	height: auto;
+}
+
+
+.search_box li a{
+	color:white;
+}
+
+
+.user_list .user-image{
+	width:30px;
+	height: 30px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+
+
