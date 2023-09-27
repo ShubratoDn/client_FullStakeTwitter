@@ -12,5 +12,9 @@ public interface PostServices {
 	int addPostMultimedia(Post post, int userId, String fileType, String filePath);
 	
 	List<Post> getAllPosts();
+	List<Post> getYourFollowingPosts(int follower_id);
 	List<Post> getAllPostsByUserId(int userId);
+	List<Post> getPostContaining(String text);
+	
+	Post getPostById(int id);
 }

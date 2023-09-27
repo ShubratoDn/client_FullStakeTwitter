@@ -18,7 +18,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login Loggy</title>
+<title>Login Twitter Clone</title>
 
 <%@include file="partials/header-links.jsp"%>
 
@@ -72,7 +72,9 @@
 
 			</div>
 			<button type="submit" class="btn btn-primary">Login</button>
+			<a href="home" class=" d-block w-100 mt-3">Go back to Home</a>
 		</form>
+		
 	</main>
 
 

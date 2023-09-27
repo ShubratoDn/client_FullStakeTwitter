@@ -10,7 +10,7 @@
 		
 		<div class="w-100">
 			<div class="write-post-btn" type="button" data-toggle="modal" data-target="#exampleModal">
-				<img alt=""  src="resources/image/userImages/<%=x.getImage()%>"> <span>Let's log something?</span>
+				<img alt=""  src="resources/image/userImages/<%=x.getImage()%>"> <span>What is happening?!</span>
 			</div>
 		</div>
 		<!-- Modal -->

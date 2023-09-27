@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Register to loggy</title>
+<title>Register to Twitter Clone</title>
 <%@include file="partials/header-links.jsp"%>
 
 </head>
@@ -26,7 +26,7 @@
 
 	<main class="login-page w-100">
 		<form action="register" enctype="multipart/form-data" method="post" class="col-lg-5 border m-auto py-4">
-			<h2 class="text-center">Register to Loggy</h2>
+			<h2 class="text-center">Register to Twitter Clone</h2>
 			<br>
 
 			<!-- Showing Error MEssage -->
@@ -69,6 +69,12 @@
 					id="img">
 			</div>
 			<input type="submit" class="btn w-100 btn-primary" value="Register Now">
+			
+			<div class="mt-4">
+				<a href="home" class="mr-3">Go back to Home</a>
+				<a href="home" class="mr-3">Login to TwitterClone</a>
+			</div>
+			
 		</form>
 	</main>
 

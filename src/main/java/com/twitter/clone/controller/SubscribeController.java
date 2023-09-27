@@ -1,5 +1,7 @@
 package com.twitter.clone.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,18 +21,34 @@ public class SubscribeController {
 
 	@Autowired
 	private UserSubscribeServiceImple subscribeServiceImple;
-	
-	
-	@GetMapping("/search_user")
-	public String followpage() {
-		return "search_user";
-	}
+
 	
 	@GetMapping("/my-followers")
-	public String myFollowers(Model model) {
-				
+	public String myFollowers(Model model, HttpSession session) {
+
+		User user = (User) session.getAttribute("user");
+
+		List<User> myFollower = subscribeServiceImple.myFollower(user.getId());
+
+		model.addAttribute("myFollowerList", myFollower);
+
 		return "followers";
 	}
+	
+	
+	
+	@GetMapping("/following")
+	public String following(Model model, HttpSession session) {
+
+		User user = (User) session.getAttribute("user");
+
+		List<User> myFollower = subscribeServiceImple.following(user.getId());
+
+		model.addAttribute("following", myFollower);
+
+		return "following";
+	}
+	
 	
 	
 	

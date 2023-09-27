@@ -41,13 +41,12 @@
 	
 
 	<main class="offset-lg-3 col-lg-6">
-		<div class="body-nav">Explore</div>
+		<div class="body-nav">Home</div>
 				
 			<!-- Write blog -->
 		<%
 			if(loggedUser != null){
-			%>			
-				<%@include file="partials/search_twitte.jsp"%>
+			%>
 				<%@include file="partials/writeBlog.jsp"%>
 			<%				
 			}
@@ -59,7 +58,6 @@
 			<%@include file="partials/AllPosts.jsp" %>
 		</div>
 
-		</div>
 	</main>
 
 
@@ -76,8 +74,7 @@
 			}
 		%>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 	<script

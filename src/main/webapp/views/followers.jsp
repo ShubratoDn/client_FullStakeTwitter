@@ -1,5 +1,6 @@
 
 
+<%@page import="java.util.List"%>
 <%@page import="com.twitter.clone.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -46,13 +47,32 @@
 	
 		<h3 class="my-4">A list of your followers</h3>		
 		
-		<div class="user_list">		
-			<div class="border rounded px-3 py-2 d-flex justify-content-between align-items-center my-2">
-				<span>
-					<img src="/resources/image/userImages/43d80c4d0281929ec399Profilepic.jpeg" class="user-image mr-1"> Shubrato Debnath
-				</span> 
-				<a href="home" class="btn btn-sm btn-success"> View Profile</a>
-			</div>						
+		<div class="user_list">	
+			
+			<%
+			
+			List<User> myFollower = (List<User>) request.getAttribute("myFollowerList");
+			if(myFollower == null || myFollower.isEmpty()){
+				%>
+				<h1 class="text-danger">You have no Follower</h1>
+				<%				
+				
+			}else{				
+			
+				for(User user: myFollower){
+					%>
+				<div class="border rounded px-3 py-2 d-flex justify-content-between align-items-center my-2">
+					<span>
+						<img src="<%="/resources/image/userImages/"+user.getImage() %>" class="user-image mr-1"> <%=user.getName() %>
+					</span> 
+					<a href="profile/<%=user.getId()%>" class="btn btn-sm btn-success"> View Profile</a>
+				</div>	
+					<%
+				}
+			}
+			%>			
+			
+							
 		</div>
 		
 	</main>

@@ -76,7 +76,19 @@ public class PostRepo {
 		return allPosts;
 	}
 	
-	
+	public List<Post> getYourFollowingPosts(int follower_id) {
+		String sql = "SELECT p.* FROM post p JOIN user_subscribed us ON p.user_id = us.creator_id WHERE us.follower_id = "+follower_id+" OR p.user_id ="+follower_id+" ORDER BY id  DESC";
+		List<Post> allPosts = this.jdbcTemplate.query(sql, new PostRowMapperImple());
+		
+		for(Post post : allPosts) {
+			User user = userServices.getUserById(post.getUser().getId());
+			PostMultimedia postMultimedia = postMultimediaServices.getPostMultimediaByPostId(post.getId());
+			post.setUser(user);
+			post.setPostMultimedia(postMultimedia);
+		}
+		
+		return allPosts;
+	}
 	
 	//get All Posts By User id
 	public List<Post> getAllPostsByUserId(int userId){		
@@ -91,6 +103,44 @@ public class PostRepo {
 		}
 		
 		return allPosts;
+	}
+	
+	
+	
+	public List<Post> getPostContaining(String text){
+		String sql = "SELECT * from post WHERE title LIKE '%"+text+"%' or content LIKE '%"+text+"%' ORDER BY id  DESC";
+		List<Post> allPosts = this.jdbcTemplate.query(sql, new PostRowMapperImple());
+		
+		for(Post post : allPosts) {
+			User user = userServices.getUserById(post.getUser().getId());
+			PostMultimedia postMultimedia = postMultimediaServices.getPostMultimediaByPostId(post.getId());
+			post.setUser(user);
+			post.setPostMultimedia(postMultimedia);
+		}
+		
+		return allPosts;
+	}
+	
+	
+	
+	public Post getPostById(int id) {
+		
+		String sql = "select * from post where id=?";
+		
+		RowMapper<Post> rowMapper = new PostRowMapperImple();
+		Post post = null;		
+		try {
+			post = this.jdbcTemplate.queryForObject(sql,rowMapper,id);
+		} catch (Exception e) {
+			return null;
+		}
+		
+		User user = userServices.getUserById(post.getUser().getId());
+		PostMultimedia postMultimedia = postMultimediaServices.getPostMultimediaByPostId(post.getId());
+		post.setUser(user);
+		post.setPostMultimedia(postMultimedia);
+		
+		return post;
 	}
 	
 	

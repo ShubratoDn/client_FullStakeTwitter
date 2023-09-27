@@ -56,6 +56,11 @@ public class PostServicesImple implements PostServices{
 		List<Post> allPosts = this.postRepo.getAllPosts();
 		return allPosts;
 	}
+	
+	public List<Post> getYourFollowingPosts(int follower_id){
+		List<Post> yourFollowingPosts = this.postRepo.getYourFollowingPosts(follower_id);
+		return yourFollowingPosts;
+	}
 
 	
 	//get all potst by user id
@@ -65,6 +70,11 @@ public class PostServicesImple implements PostServices{
 	}
 
 
+	public List<Post> getPostContaining(String text){
+		return this.postRepo.getPostContaining(text);
+	}
 
-	
+	public Post getPostById(int id) {
+		return this.postRepo.getPostById(id);
+	}
 }

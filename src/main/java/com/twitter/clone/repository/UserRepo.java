@@ -1,4 +1,6 @@
 package com.twitter.clone.repository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -49,5 +51,18 @@ public class UserRepo {
 	}
 	
 	
+	
+	public List<User> getUserByNameContaining(String username){
+		String sql = "SELECT * FROM user WHERE name LIKE '%"+username+"%'";
+		RowMapper<User> rowMapper = new UserRowMapperImple();
+
+		try {
+			List<User> query = this.jdbcTemplate.query(sql, rowMapper);
+			return query;
+		} catch (Exception e) {
+			return null;
+		}		
+	}
+		
 	
 }

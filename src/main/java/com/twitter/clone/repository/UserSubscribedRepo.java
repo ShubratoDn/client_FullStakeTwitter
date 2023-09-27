@@ -1,6 +1,7 @@
 package com.twitter.clone.repository;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +51,44 @@ public class UserSubscribedRepo {
 	}
 
 	
-	public List<User> myFollower(){
+	public List<User> myFollower(int creator_id){
+		String sql = "SELECT * from `user_subscribed` where `creator_id`=?";
+		RowMapper<UserSubscribed> rowMapper = new UserSubscribedRowMapperImple(userServices);
 		
+		try {
+			List<UserSubscribed> queryForObject = this.jdbcTemplate.query(sql, rowMapper,creator_id);
+			List<User> list = new ArrayList<>();
+			
+			for(UserSubscribed userSubscribed: queryForObject) {
+				list.add(userSubscribed.getFollower());
+			}
+			
+			return list;
+		}catch (Exception e) {
+			System.out.println("WORK 2" + e);
+			return null;
+		}
+	}
+	
+	
+	
+	public List<User> following(int follower_id){
+		String sql = "SELECT * from `user_subscribed` where `follower_id`=?";
+		RowMapper<UserSubscribed> rowMapper = new UserSubscribedRowMapperImple(userServices);
+		
+		try {
+			List<UserSubscribed> queryForObject = this.jdbcTemplate.query(sql, rowMapper,follower_id);
+			List<User> list = new ArrayList<>();
+			
+			for(UserSubscribed userSubscribed: queryForObject) {
+				list.add(userSubscribed.getCreator());
+			}
+			
+			return list;
+		}catch (Exception e) {
+			System.out.println("WORK 2" + e);
+			return null;
+		}
 	}
 	
 	

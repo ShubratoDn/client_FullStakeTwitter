@@ -64,9 +64,10 @@
 					</div>
 				</a>
 				<!-- content text -->
-				<div class="content-text my-3">
+				<div class="content-text my-3 position-relative">
 					<h4><%=post.getTitle() %></h4>
 					<p><%=post.getContent() %></p>
+					<a href="/post/<%=post.getId() %>" class="stretched-link"></a>
 				</div>				
 				
 				<%
@@ -104,7 +105,7 @@
 					<button>
 						<i class="fa-regular fa-heart p-1"></i> Love
 					</button>
-					<a href=""><i class="fa-sharp fa-regular fa-comment p-1"></i>
+					<a href="/post/<%=post.getId() %>" ><i class="fa-sharp fa-regular fa-comment p-1"></i>
 						Comment</a>
 					<button>Share</button>
 				</div>
