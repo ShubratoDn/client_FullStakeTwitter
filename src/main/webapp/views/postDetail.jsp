@@ -62,7 +62,7 @@
     <!-- navbar design -->
     <nav class="col-lg-3 border side-navbar">
         <div class="navbar-brand">
-            <a href="home">TwitterClone</a>
+            <a href="/home">TwitterClone</a>
         </div>
 
         <ul class="nav-links">
@@ -73,7 +73,7 @@
                 <a href="/profile"> <img class="user_image_nav" alt="user" src="../resources/image/userImages/<%=user.getImage() %>"> <span><%=user.getName() %></span></a>
             </li>  
              <li class="nav-link">
-                <a href="search_user"><i class="fas fa-users"></i><span> Search User </span></a>
+                <a href="/search_user"><i class="fas fa-users"></i><span> Search User </span></a>
             </li>
              <li class="nav-link">
                 <a href="/my-followers"><i class="fas fa-user-circle"></i><span> My followers</span></a>

@@ -152,7 +152,8 @@
                             </div>
                         </div>
                         <!-- content text -->
-                        <div class="content-text my-3">
+                        <div class="content-text my-3 position-relative">
+                        	<a href="/post/<%=post.getId() %>" class="stretched-link"></a>
                             <h4><%=post.getTitle() %></h4>
                             <p><%=post.getContent() %></p>
                         </div>

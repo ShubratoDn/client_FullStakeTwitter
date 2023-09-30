@@ -9,7 +9,7 @@
     <!-- navbar design -->
     <nav class="col-lg-3 border side-navbar">
         <div class="navbar-brand">
-            <a href="home">TwitterClone</a>
+            <a href="#"> <img alt="logo" src="resources/image/logo.png" class="logo"> TwitterClone</a>
         </div>
 
         <ul class="nav-links">

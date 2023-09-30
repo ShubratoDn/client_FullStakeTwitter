@@ -68,7 +68,7 @@
 					</label>
 				</div>
 				
-				<span><a href="register">Register to loggy</a></span>
+				<span><a href="register">Register to TwitterClone</a></span>
 
 			</div>
 			<button type="submit" class="btn btn-primary">Login</button>

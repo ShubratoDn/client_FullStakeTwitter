@@ -2,6 +2,23 @@ body{
     font-family: 'Montserrat', sans-serif !important;
 }
 
+.nav-links i{
+	color: #2AAAE0;
+}
+
+
+.content-header-info .font-weight-bold{
+	color: #2AAAE0;
+	text-transform: capitalize;
+}
+
+
+.logo{
+	width : auto;
+	height: 40px;
+	object-fit: cover;
+}
+
 
 .font-10{
 	font-size: 10px;
